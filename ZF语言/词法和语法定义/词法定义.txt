@@ -1,0 +1,13 @@
+1.关键字：
+（1）int,double
+（2）if,else,while
+（3）break,continue
+2.运算符：
+（1）+,-,*,/,%
+（2）>,<,>=,<=,!=,==
+（3）&&,||,!
+（4）=,+=,-=,*=,/=,%=
+3.标点符号：, ; () {}
+4.空白间隔：separator={ ,\t,\n}+
+5.标志符：letter=[A-Z,a-z]，digit=[0-9]，id=(_|{letter})(_|{letter}|{digit})*
+6.常量：number={digit}+{.{digit}+}?

@@ -1,0 +1,32 @@
+declaration-list → declaration declaration-list | declaration  
+declaration → var-declaration | statement
+注：程序由声明的列表组成，声明可以是变量声明或语句块，顺序是任意的。至少必须有一个声明。
+var-declaration → type-specifier id ；
+type-specifier → int | double
+注：变量声明语句声明了简单的整数或浮点类型变量。
+statement → compound-stmt | expression-stmt  | selection-stmt  | iteration-stmt  | goto-stmt  
+compound-stmt → { local-declaration-list statement-list }  
+local-declaration-list → var-declaration local-declaration-list | empty  
+statement-list → statement statement-list | empty  
+注：复合语句由用花括号围起来的一组声明和语句组成。  本地声明和语句列表都可以是空的(非终结符empty表示空字符串)  
+selection-stmt → if (expression) statement selection-stmt-other
+selection-stmt-other → else statement | empty
+iteration-stmt → while (expression) statement
+goto-stmt → continue ; | break ;
+expression-stmt → expression; | ;
+注：表达式语句有一个可选的且后面跟着分号的表达式。
+expression → id expression-assign | logic-expression 
+expression-assign→ =additive-expression | +=additive-expression | -=additive-expression | *=additive-expression | /=additive-expression | %=additive-expression
+logic-expression → ! compare-expression | compare-expression  logic-expression-other
+logic-expression-other → && compare-expression | || compare-expression | empty
+compare-expression → additive-expression relop additive-expression
+relop → <= | < | > | >= | == | !=
+additive-expression → term additive-expression*
+additive-expression* → addop term additive-expression* | empty
+addop → + | - 
+term → factor term*
+term*  → mulop factor term* | empty
+mulop → * | /  | %
+注：加法-乘法表达式表示了算术操作符的结合性和优先级
+factor → (expression) | id | number
+注：因子或是围在括号内的表达式；或一个变量；或者一个number。

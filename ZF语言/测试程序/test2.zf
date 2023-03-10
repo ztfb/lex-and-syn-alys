@@ -1,0 +1,8 @@
+int max;
+int a1;
+int a2;
+int a3;
+a1=1;a2=2;a3=3;
+max=a1;
+if(max<a2)max=a2;
+if(max<a3)max=a3;
