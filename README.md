@@ -2,8 +2,8 @@
 
 ## 测试程序
 
-<img src="image\test.png"  />
+<img src="image/test.png"  />
 
 ## 输出结果
 
-<img src="image\result.png"  />
+<img src="image/result.png"  />
